@@ -1,0 +1,52 @@
+@UserManagementAPI_HostAddress = http://localhost:5016
+@token = techhive-dev-token
+
+GET {{UserManagementAPI_HostAddress}}/api/users
+Authorization: Bearer {{token}}
+
+###
+
+GET {{UserManagementAPI_HostAddress}}/api/users/1
+Authorization: Bearer {{token}}
+
+###
+
+GET {{UserManagementAPI_HostAddress}}/api/users/99
+Authorization: Bearer {{token}}
+
+###
+
+POST {{UserManagementAPI_HostAddress}}/api/users
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "fullName": "Priya Patel",
+  "email": "priya.patel@techhive.local",
+  "department": "Product"
+}
+
+###
+
+PUT {{UserManagementAPI_HostAddress}}/api/users/2
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "id": 2,
+  "fullName": "Luis Ramirez",
+  "email": "luis.ramirez@techhive.local",
+  "department": "Customer Success"
+}
+
+###
+
+DELETE {{UserManagementAPI_HostAddress}}/api/users/2
+Authorization: Bearer {{token}}
+
+###
+
+GET {{UserManagementAPI_HostAddress}}/api/diagnostics/error
+Authorization: Bearer {{token}}
+
+###
